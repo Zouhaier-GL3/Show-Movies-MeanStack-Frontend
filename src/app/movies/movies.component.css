@@ -1,0 +1,587 @@
+/* 
+body {
+	background: #e2eaef;
+	font-family: "Open Sans", sans-serif;
+}
+h2 {
+	color: #000;
+	font-size: 26px;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	margin: 30px 0 60px;
+}
+h2::after {
+	content: "";
+	width: 100px;
+	position: absolute;
+	margin: 0 auto;
+	height: 4px;
+	border-radius: 1px;
+	background: #7ac400;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	color: #747d89;
+	min-height: 325px;
+	text-align: center;
+	overflow: hidden;
+}
+.carousel .thumb-wrapper {
+	padding: 25px 15px;
+	background: #fff;
+	border-radius: 6px;
+	text-align: center;
+	position: relative;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+.carousel .item .img-box {
+	height: 120px;
+	margin-bottom: 20px;
+	width: 100%;
+	position: relative;
+}
+.carousel .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.carousel .item h4 {
+	font-size: 18px;
+}
+.carousel .item h4, .carousel .item p, .carousel .item ul {
+	margin-bottom: 5px;
+}
+.carousel .thumb-content .btn {
+	color: #7ac400;
+	font-size: 11px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: none;
+	border: 1px solid #7ac400;
+	padding: 6px 14px;
+	margin-top: 5px;
+	line-height: 16px;
+	border-radius: 20px;
+}
+.carousel .thumb-content .btn:hover, .carousel .thumb-content .btn:focus {
+	color: #fff;
+	background: #7ac400;
+	box-shadow: none;
+}
+.carousel .thumb-content .btn i {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+.carousel .item-year {
+	font-size: 13px;
+	padding: 2px 0;
+}
+.carousel .item-year strike {
+	opacity: 0.7;
+	margin-right: 5px;
+}
+.carousel-control-prev, .carousel-control-next {
+	height: 44px;
+	width: 40px;
+	background: #7ac400;	
+	margin: auto 0;
+	border-radius: 4px;
+	opacity: 0.8;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover {
+	background: #78bf00;
+	opacity: 1;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 36px;
+	position: absolute;
+	top: 50%;
+	display: inline-block;
+	margin: -19px 0 0 0;
+	z-index: 5;
+	left: 0;
+	right: 0;
+	color: #fff;
+	text-shadow: none;
+	font-weight: bold;
+}
+.carousel-control-prev i {
+	margin-left: -2px;
+}
+.carousel-control-next i {
+	margin-right: -4px;
+}		
+.carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 4px;
+	border-radius: 50%;
+	border: none;
+}
+.carousel-indicators li {	
+	background: rgba(0, 0, 0, 0.2);
+}
+.carousel-indicators li.active {	
+	background: rgba(0, 0, 0, 0.6);
+}
+.carousel .wish-icon {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 99;
+	cursor: pointer;
+	font-size: 16px;
+	color: #abb0b8;
+}
+.carousel .wish-icon .fa-heart {
+	color: #ff6161;
+}
+.star-rating li {
+	padding: 0;
+}
+.star-rating i {
+	font-size: 14px;
+	color: #ffc000;
+}
+ */
+
+ .carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+.carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}
+
+body{
+  font-family: 'Great Vibes', cursive;
+  
+}
+
+
+.shape-container{
+  position:relative;
+  width: 1200px;
+  height: 740px;
+  margin: 10px;
+}
+
+.test-txt{
+  color:white;
+  text-align: center;
+  margin-top:630px;
+  font-size: 130%;
+  z-index: 6;
+    /*   animation-name: test;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards; */
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-top{
+  text-align: center;
+  vertial-align: center;
+  position:absolute;
+  z-index: 1;
+
+  top:0;
+  left:0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/88.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
+  background-size: contain;
+  clip-path: polygon(50% 10%, 66.6% 25.4%, 66.6% 99.5%, 33.4% 99.5%, 33.4% 25.4%);
+/*   clip-path: polygon(50% 10%, 66.6% 25.4%, 66.6% 39.3%, 59% 48%, 59% 99.4%, 40.85% 99.4%, 40.85% 48%, 33.4% 39.3%, 33.4% 25.4%); */
+  animation-name: window-top;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards;
+  
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-top-outer{
+  position: relative;
+  background: white;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  clip-path: polygon(
+    50% 9%, /*50% 10%, top */
+    67.1% 24.9%, /*66.6% 25.4%, top right*/
+    67.1% 40%, /*66.6% 39.3%, mid right*/
+    /*59.78% 48.5%,*/ /*59% 48%,  mid inner right*/
+    67.1% /*59.78%*/ 100%, /*59% 100%, bot right */
+    32.9% /*40.22%*/ 100%, /*41% 100%, bot left */
+    /*40.22% 48.5%,*/ /*41% 48%, mid inner left*/
+    32.9% 40%, /*%33.4 39.3%, mid left*/
+    32.9% 24.9% /*33.4% 25.4% top left*/
+    );
+  animation-name: test-outer;
+  animation-duration: 1s;
+  animation-delay: 3.25s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards;
+  
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-left{
+  position:absolute;
+  left:2px;
+  bottom:0;
+  width: 66%;
+  height: 60%;
+    background-image: url('../../assets/back.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  clip-path: polygon(50% 0, 61.1% 14.1%, 61.1% 99.1%, 38.9% 99.1%, 38.9% 14.1%);
+  /*clip-path: polygon(50% 0, 61.1% 14.1%, 61.1% 100%, 50.70% 100%, 50.70% 47.7%, 38.9% 32%,  38.9% 14.1%);*/
+  animation-name: test;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards;
+  filter: brightness(0.5);
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-left-outer{
+  background: white;
+  position:absolute;
+  left:-3px;
+  bottom:0px;
+  width: 66%;
+  height:60.75%;
+  z-index: 1;
+  clip-path: polygon(
+    50.58% 0, 
+    62.36% 14.6%, 
+    62.36% 100%, 
+    38.8% 100%, 
+    38.8% 14.6%
+  );
+  
+  animation-name: test-outer;
+  animation-duration: 1s;
+  animation-delay: 3.25s;
+  animation-timing-functions: step-end;
+  animation-fill-mode: forwards;
+  
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-left-far{
+  position:absolute;
+  left:-97px;
+  bottom:0;
+  width: 66.5%;
+  height: 40%;
+  z-index:3;
+    background-image: url('../../assets/back2.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  -webkit-clip-path: polygon(0 12%, 0 86%, 35% 50%);
+  clip-path: polygon(50% 0, 61.1% 22.1%, 61.1% 98.75%, 38.9% 98.75%, 38.9% 22.1%);
+  
+  animation-name: test;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards;
+  filter: brightness(0.5);
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-left-far-outer{
+  position:absolute;
+  left:-101px;
+  bottom:0;
+  width: 66.5%;
+  height: 41%;
+  background: white;
+  z-index: 2;
+     
+  clip-path: polygon(
+    50.58% 0, 
+    62.36% 22.9%, 
+    62.36% 100%, 
+    38.8% 100%, 
+    38.8% 22.9%
+  );
+  
+  animation-name: test-outer;
+  animation-duration: 1s;
+  animation-delay: 3.25s;
+  animation-timing-functions: step-end;
+  animation-fill-mode: forwards;
+  
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-right{
+  position:absolute;
+  left:420px;
+  bottom:0;
+  width: 66%;
+  height: 60%;
+  background: white;
+    background-image: url('https://i.imgur.com/njirh0m.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+  clip-path: polygon(
+    50% 0, 
+    61.1% 14.1%, 
+    61.1% 99.1%, 
+    38.9% 99.1%, 
+    38.9% 14.1%
+  );
+  
+  animation-name: test;
+  animation-duration: 3s;
+  animation-delay: 0.5s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards;
+  filter: brightness(0.5);
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-right-outer{
+  background: white;
+  position:absolute;
+  left:415px;
+  bottom:0px;
+  width: 66%;
+  height:60.75%;
+  z-index: 1;
+  clip-path: polygon(
+    50.58% 0, 
+    62.36% 14.6%, 
+    62.36% 100%, 
+    38.8% 100%, 
+    38.8% 14.6%
+  );
+  
+  animation-name: test-outer;
+  animation-duration: 1s;
+  animation-delay: 3.25s;
+  animation-timing-functions: step-end;
+  animation-fill-mode: forwards;
+  
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-right-far{
+  position:absolute;
+  left:511px;
+  bottom:0;
+  width: 66.5%;
+  height: 40%;
+  background-image: url('https://www.pixel4k.com/wp-content/uploads/2018/09/x-men-days-of-future-past-poster_1536361809.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  z-index: 3;
+  -webkit-clip-path: polygon(0 12%, 0 86%, 35% 50%);
+  clip-path: polygon(50% 0, 61.1% 22.1%, 61.1% 98.75%, 38.9% 98.75%, 38.9% 22.1%);
+  
+  animation-name: test;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-functions: ease-in;
+  animation-fill-mode: forwards;
+  filter: brightness(0.5);
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-right-far-outer{
+  position:absolute;
+  left:507px;
+  bottom:0;
+  width: 66.5%;
+  height: 41%;
+  background: white;
+  z-index: 2;  
+  clip-path: polygon(
+    50.58% 0, 
+    62.36% 22.9%, 
+    62.36% 100%, 
+    38.8% 100%, 
+    38.8% 22.9%
+  );
+  
+  animation-name: test-outer;
+  animation-duration: 1s;
+  animation-delay: 3.25s;
+  animation-timing-functions: step-end;
+  animation-fill-mode: forwards;
+  
+  opacity: 0;
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-left:hover, .shape-right:hover, .shape-left-far:hover, .shape-right-far:hover{
+  z-index: 6;
+  filter: brightness(1);
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.shape-top:hover{
+  z-index: 6;
+  filter: brightness(1);
+  
+    clip-path: polygon(50% 10%, 66.6% 25.4%, 66.6% 99.5%, 33.4% 99.5%, 33.4% 25.4%);
+  
+  -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+@-webkit-keyframes test{
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  
+  100%{
+    opacity: 1;
+    
+  }
+  
+}
+
+@-webkit-keyframes test-outer{
+  0%{
+    opacity: 0;
+
+  }
+  
+  100%{
+    opacity: 1;
+    
+  }
+  
+}
+
+@-webkit-keyframes window-top{
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+    
+  }
+  
+  100%{
+    opacity: 1;
+    
+  }
+  
+}
+
+
+  
+

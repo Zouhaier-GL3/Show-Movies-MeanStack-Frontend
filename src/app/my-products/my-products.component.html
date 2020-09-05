@@ -1,0 +1,66 @@
+<style>
+.flex--movie {
+  max-width: 80%;
+  margin: 0 auto;
+}</style>
+<div class="sidebar-widget bg-black bg-no-repeat bg-center mb-2 bg-cover  p-6 text-white rounded-b-lg"
+style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), center / cover url( ../../assets/5001.jpg )">
+<section id="myProducts">
+  <div class="container p-5">
+    <app-message></app-message>
+    <div *ngIf="!products" class="m-auto">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <h3 *ngIf="products && !products.length" class="display-2 text-center mt-5">My Movies is Empty</h3>
+    <div *ngIf="products && products.length" class="row">
+      <div class="col">
+        <div class="sidebar-widget-header-right  border-yellow-600 border-2 rounded-t-full rounded-l-full px-1 py-1 shadow-2xl bg-gray-900 ">
+          <div class="flex w-full mb-20 flex-wrap m-2">
+            <div class="p-2 bg-yellow-700 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+              role="alert">
+              <span class="flex rounded-full bg-gray-900 uppercase px-2 py-1 text-xs font-bold mr-3">Add</span>
+              <span class="font-semibold mr-2 text-left flex-auto">My Movies</span>
+              <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" /></svg>
+            </div>
+      
+            <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base text-yellow-700">Show-Movies allows you to enjoy online
+              playback of content with the best audio-visual quality in all the most popular and common formats.
+            </p>
+          </div>
+          </div>
+        
+        <hr class="mt-0">
+        
+        <div *ngFor="let product of products" class="product">
+        <div class="w-full md:w-full  max-w-4xl border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg overflow-hidden shadow-lg m-4 flex justify-between border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg">
+          <div class="md:flex-shrink-0">
+            <a routerLink="/product/{{ product._id }}">
+            <img class="md:w-56"
+            src="http://localhost:5000/api/seller/{{product.image}}"
+                 alt="A Quiet Place movie poster" /></a>
+          </div>
+          <div class="flex flex-col flex-grow px-8 py-4 bg-color-333 text-xs font-bold"style="background: center / cover url('https://www.true-gaming.net/home/wp-content/themes/TrueGamingEvolution/style/img/sidebar.jpg');">
+            <h3 class="font-bold text-4xl md:text-2xl lg:text-2xl  movie--title text-red-700">{{ product.title }}</h3>
+            <span class="movie--year text-xl lg:text-sm lg:mb-4 text-yellow-700">{{ product.category.name }}</span>
+            <div class="flex-grow">
+              <p class="text-xl md:text-base lg:text-base  leading-snug truncate-overflow">{{ product.description }}.</p>
+            </div>
+            <div class="button-container flex justify-between mb-2">
+              <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold">Add to favorites</button>
+              <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold"  (click)="deleteProduct(product.id)" routerLink="/cart"  >Delete</button>
+              <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold" routerLink="/profile/myproducts/updateProduct/{{ product.id }}">Edit</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+</div>
+
