@@ -43,14 +43,19 @@ style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 
                  alt="A Quiet Place movie poster" /></a>
           </div>
           <div class="flex flex-col flex-grow px-8 py-4 bg-color-333 text-xs font-bold"style="background: center / cover url('https://www.true-gaming.net/home/wp-content/themes/TrueGamingEvolution/style/img/sidebar.jpg');">
-            <h3 class="font-bold text-4xl md:text-2xl lg:text-2xl  movie--title text-red-700">{{ product.title }}</h3>
+            <div class="flex">
+              <h3 class="font-bold text-4xl md:text-2xl lg:text-2xl  movie--title text-red-700">{{ product.title }}</h3>
+              <div class="text-white ml-auto sidebar-widget-header-right bg-gray-900 rounded-full h-10 w-16 flex items-center  px-3 py-1 font-bold border-yellow-600 border-4">
+                {{ product.evaluation }}
+              </div> 
+            </div>
             <span class="movie--year text-xl lg:text-sm lg:mb-4 text-yellow-700">{{ product.category.name }}</span>
             <div class="flex-grow">
               <p class="text-xl md:text-base lg:text-base  leading-snug truncate-overflow">{{ product.description }}.</p>
             </div>
             <div class="button-container flex justify-between mb-2">
               <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold">Add to favorites</button>
-              <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold"  (click)="deleteProduct(product.id)" routerLink="/cart"  >Delete</button>
+              <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold"  (click)="deleteProduct(product.id)" routerLink="/profile/myproducts"  >Delete</button>
               <button class="text-lg lg:text-sm font-bold py-2 px-4 border-yellow-700 border-2 rounded-t-lg rounded-t-lg rounded-l-lg bg-gray-900 opacity-75 text-yellow-700 text-bold" routerLink="/profile/myproducts/updateProduct/{{ product.id }}">Edit</button>
             </div>
           </div>

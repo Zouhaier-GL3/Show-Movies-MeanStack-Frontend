@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
     this.btnDisabled = true;
     try {
       const data = await this.rest.post(
-        'http://localhost:5000/api/review',
+        'http://localhost:5000/api/addreview',
         {
           productId: this.product._id,
           title: this.myReview.title,
@@ -73,7 +73,7 @@ export class ProductComponent implements OnInit {
   
 
   async reportReview(id) {
-    const data = await this.rest.get(`http://localhost:5000/api/report/${id}`);
+    const data = await this.rest.get(`http://localhost:5000/api/reviews/${id}`);
     data['success'] ? (this.reviews.push(data['review']), alert('Report sent to Administrator')) : this.data.error('error happened');
   }
   hideReport(id) {
@@ -85,17 +85,13 @@ export class ProductComponent implements OnInit {
     return false;
 
   }
-  compareDates(finished) {
-    if (Date.parse(finished) > Date.now()) {
-      return true;
-    } else { return false; }
+
+  addToCart() {
+    this.data.addToCart(this.product)
+      ? this.data.success('Product successfully added to cart.')
+      : this.data.error('Product has already been added to cart.');
   }
-  stockAvailability(stock) {
-    if (stock === 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+
+ 
 }
 

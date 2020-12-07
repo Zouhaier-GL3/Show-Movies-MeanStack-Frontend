@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class MoviesComponent implements OnInit {
 
   products: any;
+  product: any;
 
   constructor(private data: DataService, private rest: RestApiService ,  private router: Router) {}
 
@@ -30,5 +31,11 @@ export class MoviesComponent implements OnInit {
   MovieDetails(products: any):void {
     console.log(products);
     this.router.navigate(['product', this.products.id]);
+  }
+
+  addToCart() {
+    this.data.addToCart(this.product)
+      ? this.data.success('Product successfully added to cart.')
+      : this.data.error('Product has already been added to cart.');
   }
 }

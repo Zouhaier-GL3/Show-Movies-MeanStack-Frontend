@@ -30,6 +30,8 @@ import { MyProductsComponent } from './my-products/my-products.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoryNavbarComponent } from './category-navbar/category-navbar.component';
 import { SafePipe } from './safe.pipe';
+import { NewsComponent } from './news/news.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { SafePipe } from './safe.pipe';
     FooterComponent,
     CategoryNavbarComponent,
     SafePipe,
+    NewsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,12 +42,19 @@
             <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile/myproducts" routerLinkActive="active" class="no-underline text-white py-3 px-4 font-medium mr-3 bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg ">My Movies</a>
           </li>
           <li class="nav-item">
-            <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile/postproduct" routerLinkActive="active" class="no-underline text-white py-3 px-4 font-medium mr-3 bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg ">Add movies</a>
+            <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile/postproduct" routerLinkActive="active" class="no-underline text-white py-3 px-4 font-medium mr-3 bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg ">Add Movies</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/news" routerLinkActive="active" class="no-underline text-white py-3 px-4 font-medium mr-3 bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg ">Add News</a>
+          </li>
+          <li class="nav-item">
+            <a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/cart" routerLinkActive="active" class="no-underline text-white py-3 px-4 font-medium mr-3 bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg ">Favorit List <span *ngIf="data.cartItems" class="badge badge-warning ml-1">{{ data.cartItems }}</span></a>
           </li>
           <li class="nav-item">
             <a (click)="collapse()" routerLink="/contact" routerLinkActive="active" class="no-underline text-white py-3 px-4 font-medium mr-3 bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg ">Contact Us</a>
           </li>
         </div>
+        
           <li style="margin-right: 250px; margin-top: -35px;"class="py-1 px-2  mx-3 no-underline nav-item ml-0 ml-md-auto text-white  font-medium bg-gray-900 hover:bg-gray-700 border-yellow-700 border-2 bg-gray-900 rounded-t-lg rounded-l-lg text-yellow-700" ngbDropdown #dropdown="ngbDropdown">
             <a class="nav-link dropdown-toggle" ngbDropdownToggle>
               <i class="fa fa-user mr-1"></i>
@@ -69,8 +76,10 @@
               </a>
             </div>
           </li>
+         
           
         </ul>
+        
       </div>
       
     </div>
